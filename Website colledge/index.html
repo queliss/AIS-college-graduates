@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>АИС выпускники колледжа</title>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="brand">
+                <div class="logo" aria-hidden="true">🎓</div>
+                <div class="titles">
+                    <h1>АИС выпускники колледжа</h1>
+                    <p class="subtitle">Информационная система учета выпускников</p>
+                </div>
+            </div>
+            <nav class="nav" aria-label="Главное меню">
+                <a href="#about">О системе</a>
+                <a href="#features">Возможности</a>
+                <a href="#search">Поиск</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Связь с выпускниками — в один клик</h2>
+                <p>Ищите выпускников по годам, специальностям и местам работы. Анализируйте карьерные траектории и поддерживайте сообщество.</p>
+                <div class="hero-actions">
+                    <a class="btn primary" href="#search">Начать поиск</a>
+                    <a class="btn" href="#features">Узнать больше</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="search" class="search-section" aria-labelledby="search-title">
+            <div class="container">
+                <h3 id="search-title">Быстрый поиск выпускников</h3>
+                <form class="search-form" role="search">
+                    <input type="text" name="query" placeholder="ФИО или ключевые слова" aria-label="Поисковый запрос">
+                    <select name="year" aria-label="Год выпуска">
+                        <option value="">Год выпуска</option>
+                        <option>2025</option>
+                        <option>2024</option>
+                        <option>2023</option>
+                        <option>2022</option>
+                        <option>2021</option>
+                    </select>
+                    <select name="major" aria-label="Специальность">
+                        <option value="">Специальность</option>
+                        <option>Информационные системы</option>
+                        <option>Программирование</option>
+                        <option>Экономика</option>
+                        <option>Дизайн</option>
+                    </select>
+                    <button class="btn primary" type="button">Поиск</button>
+                </form>
+                <p class="muted">Демонстрационная форма. Интеграция с сервером будет добавлена позже.</p>
+            </div>
+        </section>
+
+        <section id="features" class="features" aria-labelledby="features-title">
+            <div class="container">
+                <h3 id="features-title">Возможности системы</h3>
+                <div class="grid">
+                    <article class="card">
+                        <h4>Гибкий поиск</h4>
+                        <p>Фильтры по годам, специальностям, компаниям и городам.</p>
+                    </article>
+                    <article class="card">
+                        <h4>Аналитика</h4>
+                        <p>Отчеты по трудоустройству и карьерному росту выпускников.</p>
+                    </article>
+                    <article class="card">
+                        <h4>Сообщество</h4>
+                        <p>Контакты и мероприятия для поддержки связей.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about" aria-labelledby="about-title">
+            <div class="container">
+                <h3 id="about-title">О системе</h3>
+                <p>АИС «Выпускники колледжа» — это платформа для взаимодействия колледжа, студентов и работодателей. Система помогает вести учет выпускников, поддерживать контакты и собирать статистику по трудоустройству.</p>
+            </div>
+        </section>
+
+        <section id="data" class="data" aria-labelledby="data-title">
+            <div class="container">
+                <h3 id="data-title">База данных (локально)</h3>
+                <form id="graduate-form" class="form">
+                    <div class="form-row">
+                        <input type="hidden" id="id">
+                        <input id="fullName" placeholder="ФИО" required>
+                        <select id="year" required>
+                            <option value="">Год выпуска</option>
+                            <option>2025</option>
+                            <option>2024</option>
+                            <option>2023</option>
+                            <option>2022</option>
+                            <option>2021</option>
+                        </select>
+                        <select id="major" required>
+                            <option value="">Специальность</option>
+                            <option>Информационные системы</option>
+                            <option>Программирование</option>
+                            <option>Экономика</option>
+                            <option>Дизайн</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <input id="company" placeholder="Компания">
+                        <input id="position" placeholder="Должность">
+                        <select id="status">
+                            <option value="">Статус занятости</option>
+                            <option>Трудоустроен</option>
+                            <option>Ищет работу</option>
+                            <option>Обучается</option>
+                        </select>
+                        <button class="btn primary" type="submit">Сохранить</button>
+                        <button class="btn" type="button" id="reset">Очистить</button>
+                    </div>
+                </form>
+
+                <div class="table-wrap">
+                    <table class="table" id="graduates-table" aria-label="Список выпускников">
+                        <thead>
+                            <tr>
+                                <th>ФИО</th>
+                                <th>Год</th>
+                                <th>Специальность</th>
+                                <th>Компания</th>
+                                <th>Должность</th>
+                                <th>Статус</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="reports" class="reports" aria-labelledby="reports-title">
+            <div class="container">
+                <h3 id="reports-title">Отчеты</h3>
+                <div class="report-grid">
+                    <div class="report-card">
+                        <h4>По годам выпуска</h4>
+                        <table class="table compact" id="report-by-year">
+                            <thead><tr><th>Год</th><th>Выпускников</th></tr></thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div class="report-card">
+                        <h4>По специальностям</h4>
+                        <table class="table compact" id="report-by-major">
+                            <thead><tr><th>Специальность</th><th>Выпускников</th></tr></thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div class="report-card">
+                        <h4>По занятости</h4>
+                        <table class="table compact" id="report-by-status">
+                            <thead><tr><th>Статус</th><th>Кол-во</th></tr></thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacts" class="site-footer">
+        <div class="container">
+            <p>© <span id="year"></span> АИС выпускники колледжа</p>
+            <p class="muted">Эта страница — прототип. Функционал подключения к базе данных будет добавлен.</p>
+        </div>
+    </footer>
+
+    <script>
+    // Update current year in footer
+    (function updateYear() {
+        var yearEl = document.getElementById('year');
+        if (yearEl) {
+            yearEl.textContent = new Date().getFullYear();
+        }
+    })();
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
