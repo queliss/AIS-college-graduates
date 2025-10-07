@@ -42,14 +42,7 @@
                 <h3 id="search-title">Быстрый поиск выпускников</h3>
                 <form class="search-form" role="search">
                     <input type="text" name="query" placeholder="ФИО или ключевые слова" aria-label="Поисковый запрос">
-                    <select name="year" aria-label="Год выпуска">
-                        <option value="">Год выпуска</option>
-                        <option>2025</option>
-                        <option>2024</option>
-                        <option>2023</option>
-                        <option>2022</option>
-                        <option>2021</option>
-                    </select>
+                    
                     <select name="major" aria-label="Специальность">
                         <option value="">Специальность</option>
                         <option>Информационные системы</option>
@@ -97,14 +90,6 @@
                     <div class="form-row">
                         <input type="hidden" id="id">
                         <input id="fullName" placeholder="ФИО" required>
-                        <select id="year" required>
-                            <option value="">Год выпуска</option>
-                            <option>2025</option>
-                            <option>2024</option>
-                            <option>2023</option>
-                            <option>2022</option>
-                            <option>2021</option>
-                        </select>
                         <select id="major" required>
                             <option value="">Специальность</option>
                             <option>Информационные системы</option>
@@ -121,6 +106,7 @@
                             <option>Трудоустроен</option>
                             <option>Ищет работу</option>
                             <option>Обучается</option>
+                            <option>Не указано</option>
                         </select>
                         <button class="btn primary" type="submit">Сохранить</button>
                         <button class="btn" type="button" id="reset">Очистить</button>
